@@ -1,0 +1,11 @@
+claim_id: C-XXX
+statement: ""
+claim_type: FACT | INFERENCE | ASSUMPTION | HYPOTHESIS | RECOMMENDATION
+evidence_ids: []
+source_ids: []
+source_locations: []
+inference_steps: []
+counterevidence: []
+confidence: HIGH | MEDIUM | LOW
+scope: ""
+status: SUPPORTED | PARTIALLY_SUPPORTED | UNSUPPORTED | CONTRADICTED | UNKNOWN

@@ -1,0 +1,17 @@
+evidence_id: E-XXX
+source:
+  source_id: S-XXX
+  source_type: ACL_ANTHOLOGY | OFFICIAL_VENUE | OFFICIAL_REPO | ARXIV | DATASET | MODEL | SECONDARY
+  title: ""
+  url: ""
+  provenance_verified: false
+location:
+  section: ""
+  page: ""
+  table: ""
+  figure: ""
+statement: ""
+evidence_type: FACT | REPORTED_RESULT | IMPLEMENTATION_DETAIL | OBSERVED_EXPERIMENT
+scope: ""
+confidence: HIGH | MEDIUM | LOW
+notes: ""

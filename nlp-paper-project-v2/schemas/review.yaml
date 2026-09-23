@@ -1,0 +1,29 @@
+review_id: R-XXX
+reviewed_artifacts: []
+source_audit:
+  status: PASS | REQUEST_CHANGES | BLOCK
+  findings: []
+extraction_audit:
+  status: PASS | REQUEST_CHANGES | BLOCK
+  findings: []
+analysis_audit:
+  status: PASS | REQUEST_CHANGES | BLOCK
+  findings: []
+claim_audit:
+  status: PASS | REQUEST_CHANGES | BLOCK
+  findings: []
+reproducibility_audit:
+  status: PASS | PARTIAL | BLOCKED | REJECTED
+  findings: []
+experiment_audit:
+  status: PASS | REQUEST_CHANGES | BLOCK
+  findings: []
+contribution_audit:
+  status: PASS | REQUEST_CHANGES | BLOCK | REJECT_TOPIC
+  findings: []
+critical_findings: []
+major_findings: []
+minor_findings: []
+required_changes: []
+decision: APPROVE | REQUEST_CHANGES | BLOCK | REJECT_TOPIC
+next_gate: ""

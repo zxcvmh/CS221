@@ -1,0 +1,88 @@
+# ==============================================================================
+# Gitignore for NLP / Visual Question Answering (VQA) Research Project
+# ==============================================================================
+
+# OS & Desktop metadata
+.DS_Store
+.directory
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+*.swo
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.*
+
+# Deep Learning / NLP / VQA Model Weights & Checkpoints
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.safetensors
+*.onnx
+*.engine
+checkpoints/
+saved_models/
+weights/
+model_output/
+
+# Experiment Tracking & Logs
+wandb/
+runs/
+lightning_logs/
+*.log
+tensorboard/
+
+# Cache directories (HuggingFace, Torch, etc.)
+.cache/
+hf_cache/
+torch_cache/
+
+# Large Datasets & Extracted Image/Text Features (VQA specific)
+data/
+datasets/
+raw_data/
+processed_data/
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Archive & temporary dumps
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# IDE & Editor settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace

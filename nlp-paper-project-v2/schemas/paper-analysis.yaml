@@ -1,0 +1,42 @@
+paper_id: ""
+bibliography:
+  title: ""
+  authors: []
+  venue: ""
+  year: null
+  anthology_id: ""
+  acl_url: ""
+  arxiv_url: ""
+  official_repo: ""
+problem:
+  task: ""
+  input: ""
+  output: ""
+  research_question: ""
+  assumptions: []
+method:
+  overview: ""
+  language_component: ""
+  visual_component: ""
+  fusion_or_alignment: ""
+  training_objective: ""
+  inference: ""
+evidence:
+  datasets: []
+  splits: []
+  baselines: []
+  metrics: []
+  ablations: []
+  reported_results: []
+implementation:
+  code_status: ""
+  checkpoint_status: ""
+  environment_status: ""
+  preprocessing_status: ""
+  blockers: []
+analysis:
+  strengths_supported_by_evidence: []
+  limitations_supported_by_evidence: []
+  plausible_inferences: []
+  open_questions: []
+  candidate_gaps: []
