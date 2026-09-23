@@ -45,7 +45,7 @@ for c in data['data']:
 |---|---|
 | **Title** | *Towards Robust Visual Question Answering: Making the Most of Biased Samples via Contrastive Learning* (MMBS) |
 | **Authors** | Qingyi Si, Yuanxin Liu, Fandong Meng, Zheng Lin, Peng Fu, Yanan Cao, Weiping Wang, Jie Zhou |
-| **Year & Venue** | 2022 | Findings of the Association for Computational Linguistics: EMNLP 2022 (pages 6648–6660) |
+| **Year & Venue** | 2022 | Findings of the Association for Computational Linguistics: EMNLP 2022 (pages 6650–6662) |
 | **ACL Anthology ID** | [`2022.findings-emnlp.495`](https://aclanthology.org/2022.findings-emnlp.495/) |
 | **DOI** | `10.18653/v1/2022.findings-emnlp.495` |
 | **Official Paper URL** | `https://aclanthology.org/2022.findings-emnlp.495.pdf` |
@@ -70,7 +70,7 @@ The citing universe was retrieved from the primary scholarly graph (`ARXIV:2210.
 
 | Paper | Year | Venue | Citation Role | Layer | Dataset | Method | Relevance |
 |---|---|---|---|---|---|---|---|
-| **Digging out Discrimination Information (DDG)** | 2023 | Findings of ACL | Evaluates MMBS, critiques grammar destruction, proposes distillation | **Layer 1** | VQA-CP v2, VQA v2 | Multi-modal Distillation on Positive/Negative Samples | **HIGH:** Primary direct critique of MMBS's positive sample syntax |
+| **Digging out Discrimination Information (DDG)** | 2023 | Findings of ACL (pp. 6910–6928) | Evaluates MMBS, critiques grammar destruction, proposes distillation | **Layer 1** | VQA-CP v2, VQA v2 | Multi-modal Distillation on Positive/Negative Samples | **HIGH:** Primary direct critique of MMBS's positive sample syntax |
 | **Robust Knowledge Distillation & Self-Contrast (KDSR)** | 2024 | IEEE ICME | Re-examines MMBS sample generation, extends with self-contrast | **Layer 1** | VQA-CP v2, VQA v2 | Self-Contrast Reasoning + Knowledge Distillation | **HIGH:** Direct successor addressing MMBS in-batch negative sample weakness |
 | **CLAP** | 2025 | IEEE ICME | Modifies contrastive sampling via dictionary answer perturbation | **Layer 1** | VQA-CP v2, VQA v2 | Contrastive Learning + Answer Perturbation | **HIGH:** Replaces external augmentation with dictionary positive generation |
 | **Counterfactual Dual-Bias VQA** | 2025 | IEEE TNNLS | Extends MMBS positive branch with counterfactual dual-bias | **Layer 1** | VQA-CP v2, VQA v2 | Multimodality Counterfactual Contrastive Learning | **HIGH:** Direct successor refining the negative sample space |
@@ -80,7 +80,7 @@ The citing universe was retrieved from the primary scholarly graph (`ARXIV:2210.
 | **CopVQA (Cognitive Pathways)** | 2023 | EMNLP Main | Solves generalization without contrastive augmentation | **Layer 2** | VQA-CP v2, PathVQA | Causal Cognitive Pathways with Two Cognition Layers | **HIGH:** Benchmark rival achieving MMBS SOTA with 1/4 parameter size |
 | **Towards Robust VQA via Causal Intervention (CC-VQA)** | 2025 | IEEE ICME | Combines causal front/back-door adjustment with contrast | **Layer 2** | VQA-CP v2 | Causal Intervention + Contrastive Representation | **HIGH:** Solves bias via causal graphs rather than lexical perturbation |
 | **Eliminating Language Bias via Potential Causality** | 2025 | Expert Syst. Appl. | Alternative causal approach to language bias | **Layer 2** | VQA-CP v2 | Potential Causality Models | **MEDIUM:** Causal modeling of question-answer paths |
-| **Dual-Space Intervention (DSI)** | 2026 | Expert Syst. Appl. | Decouples bias into language and distribution spaces | **Layer 2** | VQA-CP v2 | Dual-Space Intervention (Language vs Distribution) | **HIGH:** Modern alternative addressing the OOD/ID trade-off |
+| **Dual-Space Intervention (DSI)** | 2026 | Expert Syst. Appl. | Direct descendant of MMBS shuffling; proposes adaptive question shuffling based on difficulty + label rebalancing | **Layer 1 / Layer 2** | VQA-CP v2, VQA-CP v1, VQA-CE, SLAKE-CP | Adaptive Word Shuffling + Head/Tail Label Rebalancing | **HIGH:** Modern 2026 baseline proving that token shuffling is still the dominant yet linguistically flawed debiasing paradigm |
 | **Mitigating Shift via Adaptive Reweighting** | 2026 | Pattern Recognition | Solves distribution shift without sample generation | **Layer 2** | VQA-CP v2 | Dynamic Gradient Reweighting | **MEDIUM:** Optimization-level alternative |
 | **Task Progressive Curriculum Learning** | 2024 | arXiv (Preprint) | Solves OOD/ID trade-off via progressive difficulty | **Layer 2** | VQA-CP v2, VQA v2 | Curriculum Learning | **MEDIUM:** Addresses the exact same trade-off via scheduling |
 | **OSCAR (Online Self-Calibration)** | 2026 | IJCAI | Authors of MMBS shift paradigm to LVLM hallucination | **Layer 3** | LLaVA, POPE, MME | MCTS Lookahead + Direct Preference Optimization | **HIGH:** Paradigm shift by MMBS authors from UpDn debiasing to LVLMs |
@@ -268,12 +268,13 @@ Grouping the limitations reported across all 35 citing works reveals four fundam
 
 | Research Direction / Paper | Official Code | Dataset Access | Checkpoints | Hardware Requirements | Reproducibility Rating |
 |---|---|---|---|---|---|
-| **MMBS Baseline (Findings of EMNLP 2022)** | [PhoebusSi/MMBS](https://github.com/PhoebusSi/MMBS) (Public) | Standard VQA-CP v2 & VQA v2 (Public) | Available via Google Drive / Baidu | 1 GPU (TITAN RTX / RTX 3090 / Colab T4), ~0.38h/epoch | **PASS** (Zero blocker, verified code structure) |
+| **MMBS Baseline (Findings of EMNLP 2022)** | [PhoebusSi/MMBS](https://github.com/PhoebusSi/MMBS) (Public) | Standard VQA-CP v2 & VQA v2 (Public) | Available via Google Drive / Baidu | 1 GPU (TITAN RTX / RTX 3090 / Colab T4), ~0.38h/epoch | **PASS / PARTIAL** (Public code, verified structure) |
 | **Direction 1: Syntax-Preserving Parsing on MMBS** | Extends `dataset_vqacp_MMBS.py` | Same as MMBS | Inherits MMBS base checkpoints | Same as MMBS (spaCy parser runs on CPU during caching) | **PASS** (100% reproducible on free Colab/Kaggle) |
 | **Direction 2: Minimal-Pair Negative Generation** | Extends `model_MMBS.py` | Same as MMBS | Inherits MMBS base checkpoints | Same as MMBS (adds negligible memory for negative embeddings) | **PASS** |
-| **Direction 3: DDG (Findings of ACL 2023)** | Unofficial/Partial repos | Same as MMBS | Not fully archived on HuggingFace | 1-2 GPUs (Knowledge distillation overhead) | **PARTIAL** |
-| **Direction 4: CopVQA (EMNLP 2023 Main)** | Public GitHub | VQA-CP v2, PathVQA | Available | 1 GPU (~4GB VRAM, very lightweight) | **PASS** |
-| **Direction 5: OSCAR (IJCAI 2026 - LVLM)** | Code promised in preprint | LLaVA-1.5, POPE | Requires 7B/13B LVLM checkpoints | Multi-GPU (A100 40GB/80GB required for MCTS) | **BLOCKED** for standard student compute |
+| **DDG Competitor (Findings of ACL 2023)** | [Zhiquan-Wen/DDG](https://github.com/Zhiquan-Wen/DDG) (Public) | Standard VQA-CP v2 & VQA v2 | Available with pretrained teacher | 1 GPU (Knowledge distillation overhead, trainable on Colab T4) | **PASS** (Verified public code & model weights) |
+| **DSI Modern Frontier (ESWA 2026)** | [songxdr3/DSI](https://github.com/songxdr3/DSI) (Public) | VQA-CP v2, VQA-CP v1, VQA-CE | Re-trainable via `main.py` | 1 GPU (Python 3.8, PyTorch, ~100GB disk space) | **PARTIAL** (Verified complete training/eval code) |
+| **CopVQA (EMNLP 2023 Main)** | **NO PUBLIC REPO** (Unreleased) | VQA-CP v2, PathVQA | Not released by authors | N/A | **BLOCKED / REJECTED** (Unverifiable claims, excluded from experiments) |
+| **OSCAR (IJCAI 2026 - LVLM)** | Code promised in preprint | LLaVA-1.5, POPE | Requires 7B/13B LVLM checkpoints | Multi-GPU (A100 40GB/80GB required for MCTS) | **BLOCKED** for standard student compute |
 
 ---
 
@@ -328,7 +329,7 @@ Grouping the limitations reported across all 35 citing works reveals four fundam
 
 The following specific items could not be independently verified from public artifacts and remain designated as `UNVERIFIED`:
 1. **Full Pretrained Checkpoints for MMBS on Baidu Netdisk:** The official repository links author checkpoints to a Baidu Netdisk URL requiring Chinese phone SMS verification; independent verification requires training from scratch using the provided training scripts.
-2. **Exact Latent Space Dimensions in DSI (ESWA 2026):** The full source code for the 2026 ESWA paper on GitHub (`songxdr3`) is partially archived without full docstrings, leaving the exact projection matrix rank unverified from documentation.
+2. **Exact Test Set Score Breakdowns for DSI (ESWA 2026) on VQA v2:** While DSI's code repository (`songxdr3/DSI`) confirms the adaptive question shuffling mechanism in `train.py` and `base_model.py`, the official publication reports detailed numbers on VQA-CP v1 (63.14%), SLAKE-CP (37.61%), and VQA-CP v2; exact split breakdown on VQA v2 validation requires running the provided `eval.py` locally.
 3. **Exact Training Budget of OSCAR on LLaVA-1.5-13B:** The IJCAI 2026 preprint lists overall GPU hours across clusters, but single-run wall-clock time on standard hardware is not reported.
 
 ---

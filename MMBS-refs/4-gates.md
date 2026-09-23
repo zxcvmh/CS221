@@ -213,7 +213,7 @@ Từ điểm neo **A (MMBS / Robust VQA under language bias)**, cộng đồng k
 |---|---|---|---|
 | **1. Can we test it?** | Có, kiểm thử trực tiếp trên VQA-CP v2 và VQA v2. | Có, tạo test suite chẩn đoán trên tập test VQA-CP v2. | **PASS** |
 | **2. Dataset available?** | Công khai hoàn toàn (VQA-CP v2, VQA v2). | Công khai hoàn toàn (kèm chú thích ngữ nghĩa tự động). | **PASS** |
-| **3. Code available?** | Code MMBS chính thức có sẵn (`PhoebusSi/MMBS`). | Code MMBS, CopVQA, UpDn đều public trên GitHub. | **PASS** |
+| **3. Code available?** | Code MMBS chính thức có sẵn (`PhoebusSi/MMBS`). | Code MMBS, DDG, DSI, UpDn đều public trên GitHub. (CopVQA bị loại do tác giả không phát hành code). | **PASS** |
 | **4. Checkpoint available?** | Checkpoint có thể tải hoặc tự train trong $<12$ giờ. | Có sẵn checkpoint từ các repo chính thức. | **PASS** |
 | **5. GPU feasible?** | **Cực kỳ nhẹ:** Chạy trên 1 GPU cá nhân (RTX 3060/3090) hoặc Google Colab T4 (0.38h/epoch). | **Cực kỳ nhẹ:** Chủ yếu chạy inference để chẩn đoán. | **PASS** |
 | **6. Evaluation possible?** | Dùng evaluator chuẩn của VQA-CP v2. | Đo accuracy theo từng nhóm lỗi ngữ pháp cụ thể. | **PASS** |
@@ -234,5 +234,5 @@ Dưới đây là 2 lựa chọn chiến lược để bạn quyết định hư
   * *Nội dung:* Dùng spaCy/Stanza bóc tách toán tử nghi vấn dựa trên cây phụ thuộc cú pháp, thay thế phép xáo từ của MMBS. Chứng minh mô hình đạt SOTA trên câu hỏi tự nhiên mà không cần test-time shuffling.
 * **Lựa chọn 2 (Thiên về Phân tích / Empirical & Diagnostic Contribution - Hướng đi Thẩm định):**
   * Đi vào **Nhánh F + H**: Dự án **Dissecting the Illusion of Reasoning in Robust VQA**.
-  * *Nội dung:* Xây dựng một Linguistic Diagnostic Benchmark đối đầu giữa 4 trường phái (MMBS, CopVQA, DDG, UpDn) để phơi bày hiện tượng "Shortcut Shift" và chứng minh các mô hình debiasing hiện tại vẫn chưa thực sự hiểu câu hỏi.
+  * *Nội dung:* Xây dựng một Linguistic Diagnostic Benchmark đối đầu giữa 4 trường phái có code kiểm chứng (MMBS, DDG, DSI, UpDn) để phơi bày hiện tượng "Shortcut Shift" và chứng minh các mô hình debiasing hiện tại vẫn chưa thực sự hiểu câu hỏi.
 
